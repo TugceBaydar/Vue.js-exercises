@@ -1,1 +1,23 @@
+input {
+  padding:1em;
+  box-shadow: 6px 3px 20px 0px #0a4221;
+}
 
+li {
+  list-style-type: katakana-iroha;
+  margin-left: 2em;
+}
+
+button {
+  margin-left: 1.9em;
+  background-color: #ea8a65;
+  box-shadow: 4px 5px 20px 0px #9c2a2a;
+}
+
+h1  {
+  color:tomato;
+}
+
+/* #todo {
+  text-align: center;
+} */
