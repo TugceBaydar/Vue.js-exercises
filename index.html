@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 		<!-- This connects my CSS external stylesheet to the index.html -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
@@ -42,6 +43,9 @@
 		 </div>
 		 <button type="button" v-on:click="start" v-if="progress < 100">Start</button>
 	 </div> -->
+
+<!-- =======================class exc====================== -->
+
   <!-- <div id="#app">
 	   <ul>
 			 <li v-for='student in students'>
@@ -50,6 +54,10 @@
 		 </ul>
 </div> -->
 
+<!-- =======================class exc====================== -->
+
+
+<!-- =======================to do list =========================- -->
 	<div id="todo">
 		<h1 class="mt-5 ml-5">My To-Do List</h1>
 		 <!-- {{ newTask }} -->
@@ -59,14 +67,29 @@
 				 v-on:keyup.enter='addTask'
 				 >
 		<ul>
-			<li v-for='task in todoList' class="mt-5 animated">
-				<label>{{ task }}</label>
-				<button type="button" class="btn btn-warning"  v-on:click="removeTask(task)">Remove</button>
-			</li>
+			<transition-group  tag="li" name="slide-fade">
+				<li class="mt-5" v-for='task in todoList' v-bind:key="task" id="myli">
+				<!-- <div id="divfortask"> -->
+					<label id="mytask">{{ task }}</label>
+				<!-- </div> -->
+					<button type="button" class="btn btn-warning"  v-on:click="removeTask(task)">Remove</button>
+					<button type="button" class="btn btn-success" style="backgroundColor:#1ca283ab"  v-on:click="editTask(task)">Edit</button>
+				</li>
+			</transition-group>
 		</ul>
 	</div>
 
+<!-- =======================to do list =========================- -->
 
+<!-- <div id="app">
+
+		<div
+				v-bind:class="[activeClass, 'box']"
+					></div>
+		<div class="box" v-bind:style="activeStyles"></div>
+		<div class="box" v-bind:class="{ 'new-class' : isActive }"></div>
+
+</div> -->
 
 
 		<!-- This gives access to the jquery library -->

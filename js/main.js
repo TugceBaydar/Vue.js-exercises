@@ -31,12 +31,14 @@
 //    }
 // })
 
+// =====================to do ==================
 
 var todo = new Vue ({
   el:'#todo',
   data: {
     newTask:'',
-    todoList:[]
+    todoList:[],
+    editedTask: '',
   },
   methods: {
     addTask: function() {
@@ -47,9 +49,30 @@ var todo = new Vue ({
     removeTask: function(task) {
        var index = this.todoList.indexOf(task);
        this.todoList.splice(index, 1);
+    },
+    editTask: function(task) {
+      var myTask = document.getElementById('mytask');
+      myTask.innerHTML = '<input type="text" placeholder="edit your task" v-model="editedTask" v-on:keyup.enter="addTask">';
+      // document.getElementById('myli').innerHTML = '';
+      var editTask = this.editedTask;
+      this.todoList.push(editTask);
     }
   }
 });
+//
 
+// add animation and add editing thing !! and check box !!
+// ====================to do =========================
 
-// add animation and add editing thing !!
+// new Vue ({
+//   el:'#app',
+//   data: {
+//      activeClass: 'active',
+//      activeStyles: {
+//        height: '250px',
+//        border: '10px inset teal',
+//        backgroundColor: 'blue'
+//      },
+//      isActive: true
+//   }
+// })

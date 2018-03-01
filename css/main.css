@@ -16,8 +16,34 @@ button {
 
 h1  {
   color:tomato;
+} */
+
+ #todo {
+  text-align: center;
 }
 
-/* #todo {
-  text-align: center;
+ .slide-fade-enter, .slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.slide-fade-enter-active, .slide-fade-leave-active {
+  transition: 0.3s ease;
+}
+
+
+/* =========================================== */
+
+/* .box {
+  background-color: tomato;
+  height: 150px;
+  width: 150px;
+  margin:10px;
+}
+
+.active {
+  border: 10px solid green;
+}
+
+.new-class {
+  background-color: purple;
 } */
