@@ -18,78 +18,59 @@
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
-<!--
-   <div id="app">
 
-		 <h1 v-if="num * 50 >= 5000">{{	message	}}</h1>
-		 <h1 v-else>Else statement ran</h1>
-		 <h1 v-bind:style="goodbyeStyles">goodbye!</h1>
+  <div id="app">
+		<div>
+			<h1 class="mt-5">A Vue.js based game</h1>
+		</div>
 
-	 </div> -->
+		<section id="middle" class="mt-5">
+			<div id="ll">
+				<h3>Player Health</h3>
+				<div  id="left" v-bind:style="{ width: playerHealth + '%'}">
+					<h4>{{ playerHealth }}</h4>
+				</div>
+			</div>
 
-	 <!-- <div id="app">
-		 <div class="progress-bar"
-		       style="width:300px; height:75px; background-color:grey;
-					 padding:5px;">
-						 <div class="progress-bar"
-						      style="height: 100%; background-color:tomato;
-									text-align:center"
-									v-bind:style="{width: progress + '%'}"
-									>
+			<div id="rr">
+				<h3>Monster Health</h3>
+				<div  id="right" v-bind:style="{ width: monsterHealth + '%'}">
+					<h4>{{ monsterHealth }}</h4>
+				</div>
+			</div>
 
-									{{ progress + '%'}}
+		</section>
 
-						 </div>
-		 </div>
-		 <button type="button" v-on:click="start" v-if="progress < 100">Start</button>
-	 </div> -->
+		<section id="buttons" class="mt-5">
+			<div v-if="!isRunning">
+				<button type="button" v-on:click="start"  class="btn btn-outline-primary">Start Game</button>
+			</div>
 
-<!-- =======================class exc====================== -->
+			<div class="mt-5" v-else>
+				<button type="button" class="btn btn-outline-warning four" v-on:click="attack(10, 3)">Attack</button>
+				<button type="button" class="btn btn-outline-success four" v-on:click="attack(13, 5)">Special Attack</button>
+				<button type="button" class="btn btn-outline-warning four" v-on:click="heal">Heal</button>
+				<button type="button" class="btn btn-outline-danger four" v-on:click="start">Give Up</button>
+			</div>
 
-  <!-- <div id="#app">
-	   <ul>
-			 <li v-for='student in students'>
-				 {{ student.name }} is {{ student.gender }} and they are {{ student.age * 365 }} days old
-			 </li>
-		 </ul>
-</div> -->
-
-<!-- =======================class exc====================== -->
-
-
-<!-- =======================to do list =========================- -->
-	<div id="todo">
-		<h1 class="mt-5 ml-5">My To-Do List</h1>
-		 <!-- {{ newTask }} -->
-		<input type="text" class="mt-5 ml-5"
-		     v-model='newTask'
-				 placeholder="what do you need to do"
-				 v-on:keyup.enter='addTask'
-				 >
-		<ul>
-			<transition-group  tag="li" name="slide-fade">
-				<li class="mt-5" v-for='task in todoList' v-bind:key="task" id="myli">
-				<!-- <div id="divfortask"> -->
-					<label id="mytask">{{ task }}</label>
-				<!-- </div> -->
-					<button type="button" class="btn btn-warning"  v-on:click="removeTask(task)">Remove</button>
-					<button type="button" class="btn btn-success" style="backgroundColor:#1ca283ab"  v-on:click="editTask(task)">Edit</button>
-				</li>
-			</transition-group>
-		</ul>
+		</section>
 	</div>
 
-<!-- =======================to do list =========================- -->
 
-<!-- <div id="app">
 
-		<div
-				v-bind:class="[activeClass, 'box']"
-					></div>
-		<div class="box" v-bind:style="activeStyles"></div>
-		<div class="box" v-bind:class="{ 'new-class' : isActive }"></div>
 
-</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 		<!-- This gives access to the jquery library -->

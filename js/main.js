@@ -1,78 +1,38 @@
-// new Vue({
-//   el: '#app',
-//   data: {
-//     message: 'hello tugce',
-//     num: 100,
-//     goodbyeStyles: {
-//       'background-color': 'tomato',
-//       color: 'white',
-//       padding: '5px'
-//     }
-//   }
-// })
-
-// new Vue ({
-//    el: '#app',
-//    data: {
-//      progress: 0,
-//    },
-//    methods: {
-//      start: function() {
-//         var vm = this;
-//         var width = 5;
-//         var increase = setInterval(function() {
-//           vm.progress += width;
-//           if(vm.progress >= 100) {
-//             clearInterval(increase);
-//           }
-//       }, 100);
-//
-//      }
-//    }
-// })
-
-// =====================to do ==================
-
-var todo = new Vue ({
-  el:'#todo',
-  data: {
-    newTask:'',
-    todoList:[],
-    editedTask: '',
+new Vue({
+  el:"#app",
+  data:{
+    isRunning: false,
+    playerHealth: 100,
+    monsterHealth: 100,
   },
   methods: {
-    addTask: function() {
-      var task = this.newTask;
-      this.todoList.push(task);
-      this.newTask = '';
+    start: function() {
+      this.isRunning = !this.isRunning;
+      this.playerHealth = 100;
+      this.monsterHealth = 100;
     },
-    removeTask: function(task) {
-       var index = this.todoList.indexOf(task);
-       this.todoList.splice(index, 1);
+    calcDamage: function(max, min) {
+      return   Math.floor(Math.random() * max) + min;
     },
-    editTask: function(task) {
-      var myTask = document.getElementById('mytask');
-      myTask.innerHTML = '<input type="text" placeholder="edit your task" v-model="editedTask" v-on:keyup.enter="addTask">';
-      // document.getElementById('myli').innerHTML = '';
-      var editTask = this.editedTask;
-      this.todoList.push(editTask);
+    // giveUp: function() {
+    //   this.isRunning = false;
+    //   this.playerHealth = 100;
+    //   this.monsterHealth = 100;
+    // },
+    attack: function(max, min) {
+      this.monsterAttack();
+      this.monsterHealth -= this.calcDamage(max, min);
+    },
+    monsterAttack: function() {
+      this.playerHealth -= this.calcDamage(18, 6);
+    },
+    // special: function() {
+    //   this.playerHealth -= this.calcDamage(18, 6);
+    //   this.monsterHealth -= this.calcDamage(13, 5);
+    // },
+    heal: function() {
+      this.playerHealth += this.calcDamage(16, 10);
+      this.monsterAttack();
     }
   }
-});
-//
-
-// add animation and add editing thing !! and check box !!
-// ====================to do =========================
-
-// new Vue ({
-//   el:'#app',
-//   data: {
-//      activeClass: 'active',
-//      activeStyles: {
-//        height: '250px',
-//        border: '10px inset teal',
-//        backgroundColor: 'blue'
-//      },
-//      isActive: true
-//   }
-// })
+})

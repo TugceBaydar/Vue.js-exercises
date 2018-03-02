@@ -1,49 +1,33 @@
-input {
-  padding:1em;
-  box-shadow: 6px 3px 20px 0px #0a4221;
-}
-
-li {
-  list-style-type: katakana-iroha;
-  margin-left: 2em;
-}
-
-button {
-  margin-left: 1.9em;
-  background-color: #ea8a65;
-  box-shadow: 4px 5px 20px 0px #9c2a2a;
-}
-
-h1  {
+h1 {
   color:tomato;
-} */
-
- #todo {
   text-align: center;
 }
 
- .slide-fade-enter, .slide-fade-leave-to {
-  opacity: 0;
-  transform: translateX(-50px);
-}
-.slide-fade-enter-active, .slide-fade-leave-active {
-  transition: 0.3s ease;
-}
-
-
-/* =========================================== */
-
-/* .box {
-  background-color: tomato;
-  height: 150px;
-  width: 150px;
-  margin:10px;
+#middle {
+  text-align: center;
+  background-color: #8dd2de;
+  height: 200px;
+  padding: 5%;
 }
 
-.active {
-  border: 10px solid green;
+#ll , #rr {
+  display: inline-block;
+  width:48%;
+  color:white;
+  padding: 1%;
 }
 
-.new-class {
-  background-color: purple;
-} */
+#left , #right {
+  background-color: #3c763d;
+  padding: 1%;
+  width: 100%;
+}
+
+#buttons {
+  text-align: center;
+}
+
+.four {
+  width: 20%;
+  margin-right: 2%;
+}
